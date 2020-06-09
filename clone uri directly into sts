@@ -1,0 +1,9 @@
+Add git repository in STS show view
+
+Git clone
+
+clone URI
+
+put the git repository url you want to clone - > select the branch you want to clone with   ->   directory where you want to keep this project
+
+right click on microservice on git repository in STS and import.
