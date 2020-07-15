@@ -6,3 +6,10 @@ git add -A
 git commit -m "first commit"
 git remote add origin https://github.com/erriteshecegmailcom/Microservice1---CallDetailsMS.git
 git push -u origin master
+
+
+# incase of below error : - 
+remote: Permission to insto-auto01/AnzSampleProject.git denied to erriteshecegmailcom.
+fatal: unable to access 'https://github.com/insto-auto01/AnzSampleProject.git/': The requested URL returned error: 403
+
+solution : - windows -> search "credential manager"  ->  windows credential -> git - > remove
