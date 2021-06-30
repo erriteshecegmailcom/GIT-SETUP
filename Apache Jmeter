@@ -1,0 +1,75 @@
+ 			Apache JMeter(Performance/Load Testing)
+ 
+Author: Ritesh Kumar	 							Reference: toolsqa.com 
+	 
+	
+Introduction:-
+Apache JMeter is a great tool for performance/load/ Stress/Regression/ Functional testing of web-applications.
+It is an open source, cross platform and user friendly desktop based Java application that can be executed on any platform.
+JMeter send requests to a target server by simulating(to do or make something that looks real but is not real) a group of users then collect data to calculate statistics and display performance metrics through various formats.
+	
+Installation & Setup:-
+The latest version is JMeter 3.2 and it requires java 8 path set be set for its installation.
+Download apache JMeter zip and unzip to the desired location.
+Open the windows batch file of JMeter present in apache-jmeter-3.1/bin/ JMeter (window batch file). JMeter GUI gets launced followed by CMD launch.
+						Or
+just double click the jmeter jar file.
+On launch of JMeter GUI there appears TestPlan and workbench.
+Working with JMeter:-
+We can rename our test plans using name column.
+create Test Plan:- A Test Plan can be considered as a root node that has potentially many levels of additional elements / nodes (like Thread Groups, Logic Controllers, Configuration Elements, Timers, Listeners, Aggregate Reports, CSV dataset config, Sampler Config and Assertions.) that forms a hierarchy.
+There should be at least one thread group in every test plan.
+ ThreadGoup:- (Right Click on test plan > Add > Threads > ThreadGoup) All the scripts whose services to be tested will be written here(inside threadGroup).
+Aggregate Report:-(Right Click on test plan > Add > listeners > Aggregate Report) to see the aggregate report of the test execution.
+ViewResultTree :- (Right Click on test plan > Add > listeners > ViewResultTree) to see the execution results and its request params and response params
+TrnsactionCOntroller :-(Right Click on thread group > Add > logic controller > transactional controller) A seperate Transaction controller for each service to be hit.
+Http Request :- (Right Click on TrnsactionCOntroller > Add > sampler > Http Request)
+Every service to be hit will contain parameters within body data if its a post service. (ie:-"enterprisePsnId":"${PSNID}","corpCd":"${CORPCode}","imageSize":2}) Where PSNID is the name of the regular expression extractor from where we are extracting the value of PSNID.
+If data received in response has to be trimmed or round off for the request param of other service then the javascript function has to be used ${__javaScript('${appointmentTime}'.substring(2))}..................${__javaScript('${appointmentDate}'.substring(2))}).
+If it’s get/put/delete , no params
+Server/ip name :- DNS name
+port :- port on which this domain is deployed
+protocol : http/https
+Method :- post/get/put/delete
+path:- context path (/service/data/preventive) + service name(/cancelAppointment)
+ HttpHeadManager :- (Right Click on Http Request > Add > config element >  HttpHeadManager) 
+constantTimer :- (Right Click on Http Request > Add > timer >  constant Timer) . it is the delay provided for the response to be generated. It will wait for the service for that much time to generate the response and then it will hit the other service.
+ RegularExpressionExtractor :- (Right Click on Http Request > Add > postProcessor > RegularExpressionExtractor)
+CsvDataSetConfig :- (Right Click on ThreadGroup > Add > config element >  CsvDataSetConfig) 
+Create .txt file at mentioned location. If the data stored in text file is separated by comma then extract those values in the same debug sampler with comma separated as shown.
+DebugSampler:- (Right Click on ThreadGroup > Add > config element >  DebugSampler)
+ IfController :-(Right Click on thread group > Add > logic controller > IfController) .
+If a transactionalCOntroller is supposed to execute based on any condition(ie. home should be called after succesful login/if any service to execute after successful execution of previous service).
+			
+Execute the script :-
+Time delay :- constant timer. This is the total time provided to any service for executing and generating the response.
+No of threads : total no of users that will login in to the application. if it's 200 users than 200 users entry should be there in text file.
+Rampup period :- it is the duration provided to get all the threads sent for the execution. (rampup%thread count)600/300 = 2 sec is the duration a user will wait for its execution. First thread will be sent on 0th second (beginning of the execution) and then each thread will start after 2 seconds(600/300).
+ loop count :- how many times a user will login. if we provide loop count then uncheck the scheduler. If loop count is forever then provide scheduler config.
+Scheduler
+Duration
+Startup delay
+start time
+End time
+				
+		Report Analysis   : - testingjournals.com
+ 
+Mac Scripts :- 
+Cd  ../../Desktop/apache-jmeter-3.1/bin
+Ls –a (hidden files)
+Ls
+Ls –lrt
+Pwd
+Which java
+Vi abc.txt
+:wq
+:q
+./jmeter
+  ./jmeter –n –t abc.jmx –l 123.jtl
+./jmeter –g abc.jtl –o abc (it will create folder containing html file)
+Mkdir ../../Desktop/hjgjgf
+Cp ../../Desktop .
+Mv
+Chmod 777 abc.txt (give permission to execute any script)
+./abc.txt
+ 
