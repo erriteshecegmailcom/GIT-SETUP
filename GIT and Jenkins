@@ -1,0 +1,71 @@
+GIT
+Git is a central repository, used as code source.
+Download and Install git on your local machine (https://git-scm.com/download/win)
+click "Environment Variables",
+Highlight the "Path" variable,
+click "Edit",
+add your specific path to front of "Variable value" field, separated by a semicolon from the existing entry. Do not add a space between ; and last entry
+C:\Program Files\Git\bin;C:\Program Files\Git\cmd;
+Login into github(“erriteshecegmailcom”:”Rk7$$Ng4”)
+Create new project.
+Select radio button as public so that all the developers can commit in this branch. Later we can configure it.
+Provide the project name.
+Follow the below commands on cmd :-
+Create a new folder on desktop
+Navigate to that folder using command prompt
+Git clone “Paste the url(https://github.com/erriteshecegmailcom/webservice) “on command prompt and enter
+An inner folder named web service will be created 
+Navigate to that folder on desktop using cursor/mouse.
+Copy all the contents of the project in web service folder
+Navigate to the web service folder using CMD
+Git add –-all
+Git commit –m “any name (ie. first commit)”
+Git push –u origin master
+Now the code is available in the git on master branch
+If there is existing repository in machine
+Login into github(“erriteshecegmailcom”:”Rk7$$Ng4”)
+Create new project.
+Select radio button as public so that all the developers can commit in this branch. Later we can configure it.
+Navigate to the project folder using command prompt
+Git add –all
+Git commit –m secondcommit
+git remote add origin https://github.com/erriteshecegmailcom/webautomation.git
+git push -u origin master
+Add the members (in settings/collaborators) to provide accessibility so that they can access that branch.
+To create any branch – click on the branch drop down and then type the branch name (to be created) in the text field.
+
+JENKINS
+Devops is a mechanism used for continuous integration of soft wares like version control tool, automation build, automation testing, continuous delivery , code merging etc.
+Continuous integration starts as soon as the developer completes the development and commits the code like merging the code, building the code, packaging the code and deploying it so there are no conflicts in the merging.
+It checks the bugs before committing the code but never rectifies the bug. 
+There are many tools used for continuous integration like Jenkins, bamboo, teamcity etc.
+Jenkins is a java framework used for continuous integration, regression testing.
+Steps for installing Jenkins:-
+Download Jenkins.war
+On CMD – java –jar Jenkins.war
+If there is conflict or issue of port then :- java -jar jenkins.war --httpsPort=9090/ java -jar jenkins.war --httpPort=9090(for localhost)
+Now launch that port localhost:9090
+It will ask for the user password which is generated on CMD (005a8bffd6234a6fb7314aae99364b64)
+Select installed suggested plugins
+Once the installation of plugins are over, it will navigate admin user creation page.
+Enter the credential and save and finish.(“Ritesh:rishu_raje”)
+Jenkins uses its own server (jet engine) for installation. We can also use tomcat server or any other server for deployment.
+If command prompt on which Jenkins was started is closed then we can’t access the Jenkins url(localhost:9090)
+In this case we need to restart the Jenkins
+Navigate to the directory where Jenkins.war file is present using CMD
+java -jar jenkins.war --httpPort=9090
+now login using Jenkins credentials
+Jenkins configuration :-
+Login to Jenkins dashboard > Manage Jenkins > global tools configurations 
+Configure JDK path : - Either provide jdk path of your directory (C:\Program Files (x86)\Java\jdk1.8.0_121) or default jdk.
+Configure git :- provide the path of the git where it is installed. (C:\Program Files\Git\bin\git.exe)
+
+
+
+
+Jobs creation :-
+For compiling:-
+
+
+
+
