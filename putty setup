@@ -1,0 +1,11 @@
+ launch putty
+2. enter the ip address (where deployment of project is done ) in the host name column
+3. new window will be launched
+4. enter the value of login as (Affinity/driver/SupplierApi etc)
+5. enter the password to connect to the server (3l3ment1)
+5. enter pwd to check the current working directory ()
+6. change the directory where log is generated (cd claorus-security-data-service/logs/)
+7. COMMAND TO VIEW THE LOGS:- (tail -10f security-data-service/logs/)
+	1. tail -f /var/log/messages (This will show you the last few lines of the log (i.e. only the latest information)).
+	2. less /var/log/messages(The “less” command gives you a scrollable view of the log, controlled with the arrow keys).
+	3. more -f /var/log/messages(Use “more” to get a paged view. Pressing enter or the space bar will show more of the text, which is all loaded at once.)
