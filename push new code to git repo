@@ -7,6 +7,9 @@ git commit -m "first commit"
 git remote add origin https://github.com/erriteshecegmailcom/Microservice1---CallDetailsMS.git
 git push -u origin master
 
+username:erriteshecegmailcom
+password: (we need to pass personal access token (profile ->settings -> developer settings -> personal access token) in place of password while pushing code)
+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
 
 # incase of below error : - 
 remote: Permission to insto-auto01/AnzSampleProject.git denied to erriteshecegmailcom.
